@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CleanLink</title>
+    <link rel="stylesheet" href="../styles/zovo-base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="zovo">
+    <div class="zovo-popup zovo-root" id="app">
+      <!-- Header -->
+      <header class="zovo-header">
+        <svg class="zovo-header__icon" viewBox="0 0 28 28" aria-hidden="true">
+          <rect width="28" height="28" rx="6" fill="#6C5CE7" />
+          <path
+            d="M11.5 16.5l-1.8 1.8a2.7 2.7 0 01-3.8-3.8l3-3a2.7 2.7 0 013.8 0M16.5 11.5l1.8-1.8a2.7 2.7 0 013.8 3.8l-3 3a2.7 2.7 0 01-3.8 0"
+            stroke="#fff"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+        </svg>
+        <span class="zovo-header__title">__MSG_extShortName__</span>
+        <span
+          id="status-chip"
+          class="status-chip"
+          role="status"
+          aria-live="polite"
+        >
+          <span class="status-chip__dot" aria-hidden="true"></span>
+          <span id="status-chip-text" class="status-chip__text">__MSG_statusOn__</span>
+        </span>
+        <button
+          type="button"
+          id="settings-btn"
+          class="icon-btn"
+          aria-label="__MSG_popupSettingsBtn__"
+          title="__MSG_popupSettingsBtn__"
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+          </svg>
+        </button>
+      </header>
+
+      <!-- Hero: today's copy usage -->
+      <section class="zovo-stack" aria-label="Usage today" style="padding-bottom: 0">
+        <div class="zovo-hero">
+          <p class="zovo-eyebrow">__MSG_heroEyebrow__</p>
+          <div class="zovo-hero__num" id="hero-count" aria-hidden="true">0</div>
+          <p class="zovo-hero__label" id="hero-label">__MSG_heroLabelFree__</p>
+          <div class="zovo-progress" id="hero-progress-track">
+            <div class="zovo-progress__fill" id="hero-progress-fill" style="width: 0%"></div>
+          </div>
+          <p class="zovo-sr-only" id="hero-sr-status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- Cap-hit banner (hidden until the free daily cap is reached) -->
+      <section class="zovo-stack" style="padding-top: 0; padding-bottom: 0">
+        <div id="cap-banner" class="zovo-alert zovo-alert--warn" role="alert" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z" />
+          </svg>
+          <span>
+            <span id="cap-banner-text">__MSG_capBannerText__</span><br />
+            <span id="cap-banner-guarantee" class="zovo-muted" style="font-size:11px">__MSG_proRiskReversal__</span>
+          </span>
+        </div>
+      </section>
+
+      <!-- Master toggle -->
+      <section class="zovo-stack" aria-label="Master toggle">
+        <div class="zovo-card zovo-card--flush">
+          <label class="zovo-row" for="master-toggle">
+            <span class="zovo-row__label">
+              <span id="master-toggle-label">__MSG_popupMasterToggle__</span>
+              <span class="row-sublabel" id="master-toggle-sub">__MSG_masterToggleSub__</span>
+            </span>
+            <span class="toggle-switch">
+              <input type="checkbox" id="master-toggle" class="sr-toggle" checked />
+              <span class="toggle-switch__track" aria-hidden="true">
+                <span class="toggle-switch__thumb"></span>
+              </span>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Per-site allowlist -->
+      <section class="zovo-stack" aria-label="This site">
+        <p class="zovo-eyebrow">__MSG_thisSiteEyebrow__</p>
+        <div class="zovo-card zovo-card--flush">
+          <label class="zovo-row" for="allow-toggle" id="allow-row">
+            <span class="zovo-row__label">
+              <span id="site-host" class="zovo-mono row-host">__MSG_noActiveSite__</span>
+              <span class="row-sublabel">__MSG_popupAllowlistToggle__</span>
+            </span>
+            <span class="toggle-switch">
+              <input type="checkbox" id="allow-toggle" class="sr-toggle" />
+              <span class="toggle-switch__track" aria-hidden="true">
+                <span class="toggle-switch__thumb"></span>
+              </span>
+            </span>
+          </label>
+          <p id="allow-cap-note" class="row-note" hidden>__MSG_allowlistCapReached__</p>
+        </div>
+      </section>
+
+      <!-- Post-success nudge (dismissible, shown once per session) -->
+      <section class="zovo-stack" style="padding-top: 0">
+        <div id="nudge-tip" class="zovo-tip" role="status" aria-live="polite" hidden>
+          <p id="nudge-text">__MSG_nudgeText__</p>
+          <p id="nudge-guarantee" class="zovo-muted" style="font-size:11px;margin:4px 0 0">__MSG_proRiskReversal__</p>
+          <div class="zovo-tip__foot">
+            <a id="nudge-upgrade-link" class="zovo-tip__next" href="https://zovo.one/pricing?utm_source=cleanlink&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=popup_nudge" target="_blank" rel="noopener noreferrer">__MSG_popupUpgradeCta__</a>
+            <button type="button" id="nudge-dismiss" class="zovo-btn zovo-btn--ghost nudge-dismiss-btn">__MSG_dismiss__</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pro features (visible but locked on free tier) -->
+      <section class="zovo-stack" id="pro-section" aria-label="Pro features">
+        <p class="zovo-eyebrow">__MSG_proSectionEyebrow__</p>
+        <div class="zovo-card zovo-card--flush">
+          <div class="zovo-row locked-row" id="row-extended">
+            <span class="lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            </span>
+            <span class="zovo-row__label">__MSG_proExtendedRuleset__</span>
+            <span class="zovo-pro-badge"><span class="zovo-pro-badge__lock" aria-hidden="true">🔒</span>__MSG_proBadge__</span>
+          </div>
+          <div class="zovo-row locked-row" id="row-custom-rules">
+            <span class="lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            </span>
+            <span class="zovo-row__label">__MSG_proCustomRules__</span>
+            <span class="zovo-pro-badge"><span class="zovo-pro-badge__lock" aria-hidden="true">🔒</span>__MSG_proBadge__</span>
+          </div>
+          <div class="zovo-row locked-row" id="row-unlimited-copy">
+            <span class="lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            </span>
+            <span class="zovo-row__label">__MSG_proUnlimitedCopy__</span>
+            <span class="zovo-pro-badge"><span class="zovo-pro-badge__lock" aria-hidden="true">🔒</span>__MSG_proBadge__</span>
+          </div>
+          <div class="zovo-row locked-row" id="row-unlimited-allowlist">
+            <span class="lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            </span>
+            <span class="zovo-row__label">__MSG_proUnlimitedAllowlist__</span>
+            <span class="zovo-pro-badge"><span class="zovo-pro-badge__lock" aria-hidden="true">🔒</span>__MSG_proBadge__</span>
+          </div>
+          <div class="zovo-row locked-row" id="row-history">
+            <span class="lock-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            </span>
+            <span class="zovo-row__label">__MSG_proHistoryExport__</span>
+            <span class="zovo-pro-badge"><span class="zovo-pro-badge__lock" aria-hidden="true">🔒</span>__MSG_proBadge__</span>
+          </div>
+        </div>
+        <a
+          id="upgrade-btn"
+          class="zovo-btn zovo-btn--pro zovo-btn--block"
+          href="https://zovo.one/pricing?utm_source=cleanlink&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=popup"
+          target="_blank"
+          rel="noopener noreferrer"
+          >__MSG_popupUpgradeCta__</a
+        >
+        <p class="zovo-muted pro-price-line">__MSG_proPriceLine__</p>
+      </section>
+
+      <!-- Pro-active state (shown instead of the section above once licensed) -->
+      <section class="zovo-stack" id="pro-active-section" hidden aria-label="Pro active">
+        <div class="zovo-card zovo-card--flush pro-active-card">
+          <span class="zovo-pro-badge zovo-pro-badge--solid">__MSG_proBadge__</span>
+          <p id="pro-active-text">__MSG_proActiveText__</p>
+        </div>
+      </section>
+
+      <footer class="zovo-footer">
+        <span class="zovo-muted">__MSG_footerPrivacy__</span>
+        <a href="mailto:support@zovo.one">__MSG_footerSupport__</a>
+      </footer>
+    </div>
+    <script src="popup.js"></script>
+    <script src="../zovo150k.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDesc__",
+  "version": "1.0.4",
+  "default_locale": "en",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "contextMenus",
+    "storage",
+    "offscreen"
+  ],
+  "optional_permissions": [],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "sw/zovo-sw.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CleanLink",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "core",
+        "enabled": true,
+        "path": "rules/core-rules.json"
+      },
+      {
+        "id": "extended",
+        "enabled": false,
+        "path": "rules/extended-rules.json"
+      }
+    ]
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; connect-src 'self' https://zgubxqomnbmxgbdhvwja.supabase.co"
+  }
+}

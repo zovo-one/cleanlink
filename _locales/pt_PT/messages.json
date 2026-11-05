@@ -1,0 +1,708 @@
+{
+  "extName": {
+    "message": "CleanLink · Remove Tracking Parameters From Every Link",
+    "description": "Extension name shown in Chrome Web Store and chrome://extensions"
+  },
+  "extDesc": {
+    "message": "Strips utm_source, fbclid, gclid and other tracking params from every link automatically.",
+    "description": "Extension description shown in Chrome Web Store"
+  },
+  "menuCopyClean": {
+    "message": "Copy clean link",
+    "description": "Right-click context menu item on links"
+  },
+  "popupMasterToggle": {
+    "message": "Clean tracking parameters",
+    "description": "Popup master on/off toggle label"
+  },
+  "popupAllowlistToggle": {
+    "message": "Don't clean this site",
+    "description": "Popup per-site allowlist toggle label"
+  },
+  "popupCopyCap": {
+    "message": "$COUNT$ of $CAP$ copies used today",
+    "description": "Free-tier daily copy counter, used on the Options page usage row",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      },
+      "cap": {
+        "content": "$2",
+        "example": "15"
+      }
+    }
+  },
+  "popupUpgradeCta": {
+    "message": "See both plans →",
+    "description": "Single neutral link to zovo.one/pricing, no price shown in-store. Never in-store checkout, never sibling cross-sell."
+  },
+  "extShortName": {
+    "message": "CleanLink",
+    "description": "Short brand name shown in the popup header"
+  },
+  "statusOn": {
+    "message": "Protected",
+    "description": "Header status chip when cleaning is enabled"
+  },
+  "statusOff": {
+    "message": "Paused",
+    "description": "Header status chip when the master toggle is off"
+  },
+  "heroEyebrow": {
+    "message": "Today",
+    "description": "Eyebrow label above the daily copy-count hero stat"
+  },
+  "heroLabelFree": {
+    "message": "clean copies used",
+    "description": "Hero sub-label, free tier (paired with N / cap number above it)"
+  },
+  "heroLabelPro": {
+    "message": "clean copies, no daily limit",
+    "description": "Hero sub-label, pro tier"
+  },
+  "heroSrFree": {
+    "message": "$COUNT$ of $CAP$ daily clean copies used",
+    "description": "Screen-reader-only summary of the hero stat, free tier",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      },
+      "cap": {
+        "content": "$2",
+        "example": "15"
+      }
+    }
+  },
+  "heroSrPro": {
+    "message": "Unlimited daily clean copies, Pro plan active",
+    "description": "Screen-reader-only summary of the hero stat, pro tier"
+  },
+  "capBannerText": {
+    "message": "You hit today's free cap of $CAP$ clean copies. Pro removes it and adds the extended tracker list.",
+    "description": "Warning banner shown once the free daily copy cap is reached",
+    "placeholders": {
+      "cap": {
+        "content": "$1",
+        "example": "15"
+      }
+    }
+  },
+  "masterToggleSub": {
+    "message": "Blocks $COUNT$ known trackers automatically",
+    "description": "One-line note under the master toggle showing the active ruleset's param count",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "28"
+      }
+    }
+  },
+  "thisSiteEyebrow": {
+    "message": "This site",
+    "description": "Eyebrow label above the per-site allowlist row"
+  },
+  "noActiveSite": {
+    "message": "No active site",
+    "description": "Shown instead of a hostname when the current tab has no cleanable site (e.g. chrome://, new tab)"
+  },
+  "allowlistCapReached": {
+    "message": "Free allows $CAP$ allowlisted site. Pro removes this limit.",
+    "description": "Note shown when the free-tier allowlist cap is reached and this host isn't already on it",
+    "placeholders": {
+      "cap": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "nudgeText": {
+    "message": "Nice, that link copied clean. Pro removes the daily cap and unlocks the extended tracker list.",
+    "description": "Dismissible one-time-per-session tip shown after the user's first successful copy that day"
+  },
+  "dismiss": {
+    "message": "Maybe later",
+    "description": "Dismiss/decline button on the post-success upgrade nudge tip. An easy no, never a forced choice."
+  },
+  "proSectionEyebrow": {
+    "message": "Pro",
+    "description": "Eyebrow label above the locked Pro feature rows"
+  },
+  "proExtendedRuleset": {
+    "message": "Extended tracker list (100+ more)",
+    "description": "Locked Pro row: long-tail/affiliate ruleset applied automatically on navigation"
+  },
+  "proCustomRules": {
+    "message": "Custom rule editor",
+    "description": "Locked Pro row: user-defined param/regex strip rules"
+  },
+  "proUnlimitedCopy": {
+    "message": "Unlimited daily copies",
+    "description": "Locked Pro row: removes the 15/day copy-clean cap"
+  },
+  "proUnlimitedAllowlist": {
+    "message": "Unlimited allowlist",
+    "description": "Locked Pro row: removes the 1-site allowlist cap"
+  },
+  "proHistoryExport": {
+    "message": "Clean-history log & CSV export",
+    "description": "Locked Pro row: history logging and export"
+  },
+  "proBadge": {
+    "message": "Pro",
+    "description": "Small badge label used on locked rows and the active-Pro card"
+  },
+  "proActiveText": {
+    "message": "Extended ruleset, custom rules, unlimited copies and allowlist, and history export are all unlocked.",
+    "description": "Shown instead of the locked Pro rows once the license verifies as pro"
+  },
+  "proPriceLine": {
+    "message": "Pro is part of your Zovo membership · manage at zovo.one",
+    "description": "Neutral in-store reassurance line under the Pro upgrade CTA (popup + options). No price number in-store; full pricing lives on zovo.one."
+  },
+  "proRiskReversal": {
+    "message": "14-day money-back on either plan, no questions.",
+    "description": "Risk-reversal line shown at every in-store ask surface (cap banner, post-success nudge, options Pro section). No price number, so it stays store-safe; the real, honored guarantee, never a trial."
+  },
+  "optionsHeaderGetPro": {
+    "message": "See plans →",
+    "description": "Compact 'Get Pro' link in the options page header, free tier only"
+  },
+  "optionsProHeadline": {
+    "message": "Unlock CleanLink Pro. Clean every link with zero daily caps.",
+    "description": "Headline benefit statement atop the options Pro section"
+  },
+  "optionsProPriceLine": {
+    "message": "Pro is part of your Zovo membership. See both plans at zovo.one.",
+    "description": "Neutral line atop the options Pro section. No price number in-store; full two-price pitch lives on zovo.one."
+  },
+  "optionsCompareEyebrow": {
+    "message": "Free vs Pro",
+    "description": "Section label for the options Free vs Pro comparison (unused, reserved)"
+  },
+  "optionsCompareFreeName": {
+    "message": "Free",
+    "description": "Column header for the Free plan in the options Free vs Pro comparison"
+  },
+  "optionsCompareProName": {
+    "message": "Pro · Membership",
+    "description": "Column header for the Pro plan in the options Free vs Pro comparison"
+  },
+  "footerPrivacy": {
+    "message": "No data collected. 100% local.",
+    "description": "Popup footer privacy note"
+  },
+  "footerSupport": {
+    "message": "Support",
+    "description": "Popup footer mailto support link label"
+  },
+  "onbPageTitle": {
+    "message": "CleanLink setup, clean every link automatically",
+    "description": "Onboarding tab title"
+  },
+  "onbBrandTag": {
+    "message": "by Zovo",
+    "description": "Small tag next to the CleanLink brand mark in the onboarding top bar"
+  },
+  "onbSkip": {
+    "message": "Skip intro",
+    "description": "Onboarding top-bar button that closes the onboarding tab immediately"
+  },
+  "onbStepOf": {
+    "message": "$STEP$ of $TOTAL$",
+    "description": "Onboarding footer step counter, e.g. 1 of 6",
+    "placeholders": {
+      "step": {
+        "content": "$1",
+        "example": "1"
+      },
+      "total": {
+        "content": "$2",
+        "example": "6"
+      }
+    }
+  },
+  "onbBack": {
+    "message": "Back",
+    "description": "Onboarding footer back button"
+  },
+  "onbNext": {
+    "message": "Next",
+    "description": "Onboarding footer forward button, most steps"
+  },
+  "onbMaybeLater": {
+    "message": "Maybe later",
+    "description": "Onboarding footer forward button on the pricing offer step"
+  },
+  "onbStartBrowsing": {
+    "message": "Start browsing",
+    "description": "Onboarding footer forward button on the final step, closes the onboarding tab"
+  },
+  "onbS1Eyebrow": {
+    "message": "The part of every link you never see",
+    "description": "Step 1 eyebrow label"
+  },
+  "onbS1Title": {
+    "message": "Every link you click hides a tracker you never asked for.",
+    "description": "Step 1 headline"
+  },
+  "onbS1Lede": {
+    "message": "Newsletters, social shares, ads. Almost every link carries a string of tracking parameters like utm_source, fbclid, and gclid. They ride along in your address bar, in your history, and in anything you copy and forward.",
+    "description": "Step 1 body text"
+  },
+  "onbS1Pt": {
+    "message": "CleanLink strips that trail automatically, on every site, the moment a page starts loading.",
+    "description": "Step 1 secondary paragraph"
+  },
+  "onbS1FieldClickedLabel": {
+    "message": "The link you clicked",
+    "description": "Step 1 mock browser field label"
+  },
+  "onbS1FieldRevealsLabel": {
+    "message": "What it reveals",
+    "description": "Step 1 mock browser field label"
+  },
+  "onbS1FieldRevealsValue": {
+    "message": "the newsletter you're on, the campaign, sometimes the ad that led you here",
+    "description": "Step 1 mock browser field value"
+  },
+  "onbS2Eyebrow": {
+    "message": "One page load",
+    "description": "Step 2 eyebrow label"
+  },
+  "onbS2Title": {
+    "message": "CleanLink removes the tracking before you even notice.",
+    "description": "Step 2 headline"
+  },
+  "onbS2Lede": {
+    "message": "CleanLink rewrites the address with a browser-level rule the instant a page starts loading. No script runs on the page, and nothing about the link is sent anywhere to make it happen.",
+    "description": "Step 2 body text"
+  },
+  "onbS2DemoBtn": {
+    "message": "Watch it clean",
+    "description": "Step 2 button that replays the before/after clean demo"
+  },
+  "onbS2FieldYouClickLabel": {
+    "message": "You click",
+    "description": "Step 2 mock browser field label"
+  },
+  "onbS2FieldRemovesLabel": {
+    "message": "CleanLink removes",
+    "description": "Step 2 mock browser field label"
+  },
+  "onbS2FieldLandLabel": {
+    "message": "You land on",
+    "description": "Step 2 mock browser field label"
+  },
+  "onbS3Eyebrow": {
+    "message": "Ten seconds, then never touch it again",
+    "description": "Step 3 eyebrow label"
+  },
+  "onbS3Title": {
+    "message": "Pin the icon and keep the shield in view.",
+    "description": "Step 3 headline"
+  },
+  "onbS3Lede": {
+    "message": "The cleaning already runs in the background. Pinning CleanLink puts the on and off switch, the per-site allowlist, and Copy clean link one click away instead of buried in the extensions menu.",
+    "description": "Step 3 body text"
+  },
+  "onbS3Pt": {
+    "message": "Nothing here changes what gets cleaned. It keeps the control within reach.",
+    "description": "Step 3 secondary paragraph"
+  },
+  "onbS3Row1Title": {
+    "message": "Spot the puzzle-piece icon",
+    "description": "Step 3 pin-instructions row 1 title"
+  },
+  "onbS3Row1Text": {
+    "message": "It sits at the right of the address bar, next to the profile icon.",
+    "description": "Step 3 pin-instructions row 1 body"
+  },
+  "onbS3Row2Title": {
+    "message": "Find CleanLink in the list",
+    "description": "Step 3 pin-instructions row 2 title"
+  },
+  "onbS3Row2Text": {
+    "message": "Extensions are listed alphabetically.",
+    "description": "Step 3 pin-instructions row 2 body"
+  },
+  "onbS3Row3Title": {
+    "message": "Click the pin and keep it in your toolbar.",
+    "description": "Step 3 pin-instructions row 3 title"
+  },
+  "onbS3Row3Text": {
+    "message": "The icon moves into the toolbar and stays there.",
+    "description": "Step 3 pin-instructions row 3 body"
+  },
+  "onbS3PinBtn": {
+    "message": "I've pinned it",
+    "description": "Step 3 acknowledgement button, before click"
+  },
+  "onbS3PinBtnDone": {
+    "message": "Pinned",
+    "description": "Step 3 acknowledgement button, after click (disabled state)"
+  },
+  "onbS3PinnedNote": {
+    "message": "Pinned. The icon now lives in your toolbar.",
+    "description": "Step 3 confirmation text shown after pinning is acknowledged"
+  },
+  "onbS4Eyebrow": {
+    "message": "How CleanLink keeps every link clean",
+    "description": "Step 4 eyebrow label"
+  },
+  "onbS4Title": {
+    "message": "A browser rule strips the tracker before the page loads. Nothing leaves your device to protect it.",
+    "description": "Step 4 headline"
+  },
+  "onbS4Lede": {
+    "message": "The strip happens through Chrome's own declarativeNetRequest rule, evaluated in the browser before the request goes out. No proxy sits between you and the site, and the raw address never has to leave your machine to get cleaned.",
+    "description": "Step 4 body text"
+  },
+  "onbS4StatMv3": {
+    "message": "MV3",
+    "description": "Step 4 stat value"
+  },
+  "onbS4StatMv3Label": {
+    "message": "sandboxed, no remote code execution",
+    "description": "Step 4 stat sub-label"
+  },
+  "onbS4StatLocal": {
+    "message": "Local",
+    "description": "Step 4 stat value"
+  },
+  "onbS4StatLocalLabel": {
+    "message": "the rule runs in your browser, not on a server",
+    "description": "Step 4 stat sub-label"
+  },
+  "onbS4StatZero": {
+    "message": "0",
+    "description": "Step 4 stat value"
+  },
+  "onbS4StatZeroLabel": {
+    "message": "setup steps needed, protection starts on install",
+    "description": "Step 4 stat sub-label"
+  },
+  "onbS4Pt": {
+    "message": "CleanLink is built and maintained by one developer at Zovo who answers support requests directly.",
+    "description": "Step 4 secondary paragraph"
+  },
+  "onbLinkWhyIBuild": {
+    "message": "Why I build Zovo",
+    "description": "Step 4 outbound link label"
+  },
+  "onbLinkVision": {
+    "message": "The vision",
+    "description": "Outbound link label, used on step 4 and step 6"
+  },
+  "onbLinkSafety": {
+    "message": "How we keep you safe",
+    "description": "Step 4 outbound link label"
+  },
+  "onbS4Trust1Title": {
+    "message": "CleanLink keeps everything on your device",
+    "description": "Step 4 trust row 1 title"
+  },
+  "onbS4Trust1Text": {
+    "message": "The redirect rule and the clipboard copy both run locally. No dashboard, no analytics pixel, nothing logged about which links you clean.",
+    "description": "Step 4 trust row 1 body"
+  },
+  "onbS4Trust2Title": {
+    "message": "Find one person, not a support queue",
+    "description": "Step 4 trust row 2 title"
+  },
+  "onbS4Trust2TextPrefix": {
+    "message": "Zovo is built and maintained by a single developer. Write to support@zovo.one or reach out on",
+    "description": "Step 4 trust row 2 body, text before the inline GitHub link"
+  },
+  "onbLinkGithub": {
+    "message": "GitHub",
+    "description": "Inline outbound link label pointing to the developer's GitHub"
+  },
+  "onbS4Trust2TextSuffix": {
+    "message": "and a person answers.",
+    "description": "Step 4 trust row 2 body, text after the inline GitHub link"
+  },
+  "onbS5Eyebrow": {
+    "message": "The honest trade, no catch here",
+    "description": "Step 5 eyebrow label"
+  },
+  "onbS5Title": {
+    "message": "Free keeps cleaning forever. Pro removes the caps.",
+    "description": "Step 5 headline"
+  },
+  "onbS5Lede": {
+    "message": "The core tracker list runs unlimited on the free plan, every visit. Pro adds the extended list, unlimited allowlist, and unlimited copy-clean. Take it monthly, cancel anytime, or pay once and keep it for good.",
+    "description": "Step 5 body text"
+  },
+  "onbPlanFreeName": {
+    "message": "Free",
+    "description": "Free plan card name"
+  },
+  "onbPlanFreeForever": {
+    "message": "forever",
+    "description": "Free plan card price suffix"
+  },
+  "onbPlanFreeItem1": {
+    "message": "Core tracker list cleaned automatically, unlimited",
+    "description": "Free plan feature list item 1"
+  },
+  "onbPlanFreeItem2": {
+    "message": "Copy clean link, 15 a day",
+    "description": "Free plan feature list item 2"
+  },
+  "onbPlanFreeItem3": {
+    "message": "One allowlisted site",
+    "description": "Free plan feature list item 3"
+  },
+  "onbPlanFreeItem4": {
+    "message": "Master on and off toggle",
+    "description": "Free plan feature list item 4"
+  },
+  "onbPlanBestValue": {
+    "message": "Best value",
+    "description": "Ribbon label on the Lifetime plan card"
+  },
+  "onbPlanLifetimeName": {
+    "message": "Lifetime",
+    "description": "Lifetime plan card name"
+  },
+  "onbPlanLifetimeOneTime": {
+    "message": "one time",
+    "description": "Lifetime plan card price suffix"
+  },
+  "onbPlanLifetimeItem1": {
+    "message": "Extended tracker list, long-tail and affiliate params included",
+    "description": "Lifetime plan feature list item 1"
+  },
+  "onbPlanLifetimeItem2": {
+    "message": "Custom rule editor for parameters CleanLink doesn't know yet",
+    "description": "Lifetime plan feature list item 2"
+  },
+  "onbPlanLifetimeItem3": {
+    "message": "Unlimited copy clean link",
+    "description": "Lifetime plan feature list item 3"
+  },
+  "onbPlanLifetimeItem4": {
+    "message": "Unlimited allowlist",
+    "description": "Lifetime plan feature list item 4"
+  },
+  "onbPlanLifetimeItem5": {
+    "message": "Clean-history log and CSV export",
+    "description": "Lifetime plan feature list item 5"
+  },
+  "onbGetLifetimeBtn": {
+    "message": "Get my lifetime for $$99",
+    "description": "Step 5 upgrade CTA button"
+  },
+  "onbGuarantee": {
+    "message": "14-day money-back on either plan, no questions.",
+    "description": "Step 5 small print under the upgrade button"
+  },
+  "onbS6Eyebrow": {
+    "message": "You're set",
+    "description": "Step 6 eyebrow label"
+  },
+  "onbS6Title": {
+    "message": "CleanLink already keeps you clean. The toolbar icon is the only extra step, and it's optional.",
+    "description": "Step 6 headline"
+  },
+  "onbS6Lede": {
+    "message": "Pin the icon, and Copy clean link is one right-click away on any page. Here's the quick reference for what CleanLink does on its own and what's still in your hands.",
+    "description": "Step 6 body text"
+  },
+  "onbS6FromDev": {
+    "message": "From the developer",
+    "description": "Step 6 developer-note card heading"
+  },
+  "onbS6DevNote": {
+    "message": "I maintain this one alone, so a bug report goes straight to me instead of a queue. Write to support@zovo.one or find me on GitHub if something breaks.",
+    "description": "Step 6 developer-note card body"
+  },
+  "onbLinkReachGithub": {
+    "message": "Reach me on GitHub",
+    "description": "Step 6 outbound link label"
+  },
+  "onbLinkWhereGoing": {
+    "message": "Where this is going",
+    "description": "Step 6 outbound link label"
+  },
+  "onbCheatCopy": {
+    "message": "Copy a clean link",
+    "description": "Step 6 cheat-sheet row label"
+  },
+  "onbCheatCopyKey": {
+    "message": "Right-click it",
+    "description": "Step 6 cheat-sheet row shortcut"
+  },
+  "onbCheatToggleOff": {
+    "message": "Turn cleaning off here",
+    "description": "Step 6 cheat-sheet row label"
+  },
+  "onbCheatToolbar": {
+    "message": "Toolbar icon",
+    "description": "Step 6 cheat-sheet row shortcut, reused for the allow-site row"
+  },
+  "onbCheatAllow": {
+    "message": "Allow this site",
+    "description": "Step 6 cheat-sheet row label"
+  },
+  "onbCheatManage": {
+    "message": "Manage everything",
+    "description": "Step 6 cheat-sheet row label"
+  },
+  "onbCheatOptions": {
+    "message": "Options page",
+    "description": "Step 6 cheat-sheet row shortcut"
+  },
+  "onbS6Pt": {
+    "message": "The Pro upgrade from the last screen stays available from the toolbar icon whenever you're ready for it.",
+    "description": "Step 6 closing paragraph"
+  },
+  "popupSettingsBtn": {
+    "message": "Open settings",
+    "description": "Accessible label/tooltip for the gear icon button in the popup header, opens the Options page"
+  },
+  "optionsPageSubtitle": {
+    "message": "Clean links automatically. Manage your allowlist and Pro features here.",
+    "description": "Subtitle under the Options page header"
+  },
+  "optionsHeroEyebrow": {
+    "message": "Protection",
+    "description": "Eyebrow label above the Options page hero stat"
+  },
+  "optionsHeroLabel": {
+    "message": "tracking parameters CleanLink catches automatically",
+    "description": "Hero sub-label under the Options page tracker-count stat"
+  },
+  "optionsHeroSubFree": {
+    "message": "Core tracker list runs unlimited. Pro unlocks the extended long-tail and affiliate list.",
+    "description": "Small note under the Options hero stat, free tier"
+  },
+  "optionsHeroSubPro": {
+    "message": "Core and extended tracker lists both protect every visit.",
+    "description": "Small note under the Options hero stat, pro tier"
+  },
+  "optionsAllowlistEyebrow": {
+    "message": "Allowlist",
+    "description": "Eyebrow label above the Options page allowlist section"
+  },
+  "optionsAllowlistIntro": {
+    "message": "Sites CleanLink won't clean automatically.",
+    "description": "Short intro line under the Options allowlist eyebrow"
+  },
+  "optionsAllowlistEmpty": {
+    "message": "No sites allowlisted yet, CleanLink cleans everywhere by default.",
+    "description": "Empty state shown when the allowlist has no entries"
+  },
+  "optionsAllowlistInputLabel": {
+    "message": "Add a site to the allowlist",
+    "description": "Screen-reader label for the add-site text input"
+  },
+  "optionsAllowlistInputPlaceholder": {
+    "message": "example.com",
+    "description": "Placeholder text for the add-site input"
+  },
+  "optionsAllowlistAddBtn": {
+    "message": "Add",
+    "description": "Submit button label for the add-site form"
+  },
+  "optionsAllowlistInvalid": {
+    "message": "Enter a valid domain, like example.com.",
+    "description": "Inline validation error when the entered site can't be parsed as a hostname"
+  },
+  "optionsAllowlistDuplicate": {
+    "message": "That site is already allowlisted.",
+    "description": "Inline validation error when the entered site is already in the allowlist"
+  },
+  "optionsAllowlistRemove": {
+    "message": "Remove",
+    "description": "Accessible label prefix for a per-site remove button in the allowlist (host name appended at render time)"
+  },
+  "optionsUsageEyebrow": {
+    "message": "Copy clean link",
+    "description": "Eyebrow label above the Options page daily copy-usage row"
+  },
+  "optionsUsageUnlimited": {
+    "message": "Unlimited copies, Pro plan active",
+    "description": "Options page usage row text, pro tier"
+  },
+  "optionsAppearanceEyebrow": {
+    "message": "Appearance",
+    "description": "Eyebrow label above the Options page theme selector"
+  },
+  "optionsThemeLabel": {
+    "message": "Theme",
+    "description": "Label for the theme segmented control"
+  },
+  "optionsThemeSystem": {
+    "message": "System",
+    "description": "Theme option: follow the OS light/dark setting"
+  },
+  "optionsThemeLight": {
+    "message": "Light",
+    "description": "Theme option: always light"
+  },
+  "optionsThemeDark": {
+    "message": "Dark",
+    "description": "Theme option: always dark"
+  },
+  "optionsAboutEyebrow": {
+    "message": "About",
+    "description": "Eyebrow label above the Options page About section"
+  },
+  "optionsVersionLabel": {
+    "message": "Version $VERSION$",
+    "description": "Installed extension version, read live from the manifest",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  },
+  "optionsResetBtn": {
+    "message": "Reset to defaults",
+    "description": "Button that reveals the reset-settings confirmation"
+  },
+  "optionsResetConfirm": {
+    "message": "Reset protection and allowlist to their defaults? This can't be undone.",
+    "description": "Inline confirmation prompt shown after Reset to defaults is clicked"
+  },
+  "optionsResetConfirmBtn": {
+    "message": "Yes, reset",
+    "description": "Confirm button for the reset-settings prompt"
+  },
+  "optionsResetCancelBtn": {
+    "message": "Cancel",
+    "description": "Cancel button for the reset-settings prompt"
+  },
+  "optionsResetDone": {
+    "message": "Settings reset to defaults.",
+    "description": "Transient confirmation text shown after a successful reset"
+  },
+  "onbPlanCommunityName": {
+    "message": "Community",
+    "description": "Community (monthly) plan card name, step 5 offer"
+  },
+  "onbPlanCommunityPerMonth": {
+    "message": "per month",
+    "description": "Community plan card price suffix"
+  },
+  "onbPlanCommunityItem1": {
+    "message": "Every CleanLink Pro feature unlocked",
+    "description": "Community plan feature list item 1"
+  },
+  "onbPlanCommunityItem2": {
+    "message": "Cancel anytime, no lock-in",
+    "description": "Community plan feature list item 2"
+  },
+  "onbPlanCommunityLink": {
+    "message": "Start my membership →",
+    "description": "Community plan card out-link label, step 5 offer, opens the canonical zovo.one/pricing URL"
+  },
+  "onbBreakEven": {
+    "message": "$$99 once is about 20 months of $$4.99 monthly, then it's free for good. Full pricing at zovo.one/pricing.",
+    "description": "Honest break-even line shown under both paid plan cards, step 5 offer"
+  }
+}

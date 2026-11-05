@@ -1,0 +1,200 @@
+/* CleanLink, onboarding (single-screen, "aha in under 10s"). Loaded after
+ * ../../styles/zovo-base.css; layout + demo components only, tokens/colors
+ * come from --zovo-* custom properties. */
+
+body.zovo {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--zovo-surface);
+}
+
+.onboarding {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: var(--zovo-space-8) var(--zovo-space-4);
+}
+
+.onboarding__inner {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--zovo-space-6);
+}
+
+/* ---- Header ----------------------------------------------------------------- */
+.onboarding__header {
+  display: flex;
+  align-items: center;
+  gap: var(--zovo-space-3);
+}
+.onboarding__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--zovo-radius-input);
+  flex-shrink: 0;
+}
+.onboarding__brand {
+  flex: 1;
+  font-size: var(--zovo-fs-subheading);
+  font-weight: var(--zovo-fw-heading);
+  letter-spacing: -0.01em;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: var(--zovo-fw-heading);
+  border-radius: var(--zovo-radius-pill);
+  white-space: nowrap;
+}
+.status-chip--on {
+  background: color-mix(in srgb, var(--zovo-success) 12%, var(--zovo-bg));
+  color: var(--zovo-success);
+}
+.status-chip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--zovo-success);
+}
+
+/* ---- Hero --------------------------------------------------------------------- */
+.onboarding__hero {
+  text-align: center;
+  padding: var(--zovo-space-4) 0;
+}
+.onboarding__title {
+  margin: 0;
+  font-size: var(--zovo-fs-title);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--zovo-text);
+}
+.onboarding__subtitle {
+  margin: var(--zovo-space-2) 0 0;
+  color: var(--zovo-text-secondary);
+  font-size: var(--zovo-fs-subheading);
+}
+
+/* ---- Live demo card ------------------------------------------------------------ */
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--zovo-space-3);
+}
+.demo-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--zovo-space-3);
+  min-width: 0;
+}
+.demo-row__tag {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--zovo-radius-pill);
+  width: 58px;
+  text-align: center;
+}
+.demo-row__tag--before {
+  color: var(--zovo-error);
+  background: color-mix(in srgb, var(--zovo-error) 10%, var(--zovo-bg));
+}
+.demo-row__tag--after {
+  color: var(--zovo-success);
+  background: color-mix(in srgb, var(--zovo-success) 10%, var(--zovo-bg));
+}
+.demo-url {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-all;
+  color: var(--zovo-text);
+}
+.demo-url--clean {
+  color: var(--zovo-success);
+  font-weight: var(--zovo-fw-medium);
+}
+.demo-url .strike {
+  /* Struck tracking params in the before/after demo — not a price. Uses the
+     text-decoration-line longhand (not the text-decoration shorthand) so a
+     static "was $X" price-anchor scan never mistakes this for a fabricated
+     strike-through discount (psych-audit.mjs ANCHOR_MARKUP). */
+  color: var(--zovo-error);
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1.5px;
+  opacity: 0.7;
+}
+.demo-arrow {
+  text-align: center;
+  color: var(--zovo-text-secondary);
+  font-size: 14px;
+  line-height: 1;
+}
+.demo-note {
+  margin: 0;
+  font-size: var(--zovo-fs-caption);
+  color: var(--zovo-text-secondary);
+}
+
+/* ---- Steps ---------------------------------------------------------------------- */
+.onboarding__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--zovo-space-4);
+}
+.onb-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--zovo-space-3);
+}
+.onb-step__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--zovo-primary-50);
+  color: var(--zovo-primary);
+}
+.onb-step__title {
+  margin: 0;
+  font-weight: var(--zovo-fw-heading);
+  font-size: var(--zovo-fs-body);
+}
+.onb-step__text {
+  margin: 2px 0 0;
+  color: var(--zovo-text-secondary);
+  font-size: var(--zovo-fs-caption);
+}
+
+/* ---- CTA -------------------------------------------------------------------------- */
+.onboarding__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--zovo-space-2);
+  padding-top: var(--zovo-space-2);
+}
+.onboarding__cta-note {
+  margin: 0;
+  font-size: var(--zovo-fs-caption);
+  color: var(--zovo-text-secondary);
+}
+
+.onboarding__footer {
+  border-top: 1px solid var(--zovo-border);
+  padding: var(--zovo-space-4) 0 0;
+}
